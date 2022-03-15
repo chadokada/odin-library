@@ -1,0 +1,74 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,700italic,900,900italic,300italic,300,100italic,100);
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: Roboto;
+}
+
+.container{
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+}
+
+/* Style for heading*/
+
+.heading{
+  font-size: 2rem;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  width: 100%;
+  grid-row: 1 / 2;
+  z-index: 1;
+  background-color: #f8fafc;
+  box-shadow: 0px 5px 4px -4px #94a3b8;
+}
+
+/* Styles for library */
+
+.library-container{
+  background-color: #cbd5e1;
+  width: 100%;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  grid-auto-rows: 200px;
+  gap: 20px;
+}
+
+/* Styles for book card */
+
+.book-card{
+  background-color: #f8fafc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 4px -4px;
+  padding: 10px;
+  display: grid;
+  gap: 5px;
+  grid-template-rows: auto auto auto auto;
+  grid-template-columns: auto auto;
+  justify-items: center;
+}
+
+.title,
+.author,
+.pages{
+  grid-column: 1 / 3;
+}
+
+.title{
+  font-size: 1.25em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.read,
+.not-read,
+.remove{
+  height: 30px;
+  width: 73px;
+  align-self: end;
+}
