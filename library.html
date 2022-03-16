@@ -11,7 +11,8 @@
   <div class="container">
     <div class="heading">My Personal Library</div>
     <div class="library-container">
-
+    
+    <!--
       <div class="book-card">
         <div class="title">The Hobbit or some other bullshit</div>
         <div class="author">J.R.R. Tolkien</div>
@@ -19,6 +20,43 @@
         <button class="not-read">Not Read</button>
         <button class="remove">Remove</button>
       </div>
+    -->
+    </div>
+
+    <div class="temp-container">
+
+
+
+      <div class="new-book-form">
+        <div class="form-heading">Add a Book</div>
+        <div class="form-input">
+          <label for="bookTitle">Title</label>
+          <input type="text" id="bookTitle" name="title" required>
+        </div>
+        <div class="form-input">
+          <label for="bookAuthor">Author</label>
+          <input type="text" id="bookAuthor" name="author" required>
+        </div>
+        <div class="form-input">
+          <label for="bookPages">Pages</label>
+          <input type="number" id="bookPages" name="pages" required>
+        </div>
+
+        <fieldset class="read-radio">
+          <legend>Did you read this book?</legend>
+          <label for="bookRead">Yes</label>
+          <input type="radio" id="bookRead" name="read" value="yes">
+          <label for="bookNotRead">No</label>
+          <input type="radio" id="bookNotRead" name="read" value="no">
+        </fieldset>
+
+        <button class="add-book">Add</button>
+        <button class="clear-form">Clear</button>
+
+      </div>
+
+
+
 
     </div>
 

@@ -32,31 +32,7 @@ addBookToLibrary(book2);
 addBookToLibrary(book3);
 addBookToLibrary(book4);
 
-
 function displayBook(book){
-  let bookCard = document.createElement("div");
-  bookCard.classList.add("book-card");
-  let title = document.createElement("div");
-  title.classList.add("title");
-  title.innerHTML = book.title;
-  let author = document.createElement("div");
-  author.classList.add("author");
-  author.innerHTML = book.author;
-  let pages = document.createElement("div");
-  pages.classList.add("pages");
-  pages.innerHTML = book.pages + " pages";
-  let read = document.createElement("button");
-  book.readYet() == "read" ? read.classList.add("read") : read.classList.add("not-read")
-  read.innerHTML = book.readYet();
-  let remove = document.createElement("button");
-  remove.classList.add("remove");
-  remove.innerHTML  = "Remove";
-  [title, author, pages, read, remove].forEach(element => bookCard.appendChild(element));
-  let libraryContainer = document.querySelector(".library-container");
-  libraryContainer.appendChild(bookCard);
-}
-
-function displayBookNew(book){
   let bookCard = document.createElement("div");
   bookCard.classList.add("book-card");
 
@@ -74,13 +50,50 @@ function displayBookNew(book){
   let divText = [book.title, book.author, book.pages + " pages", book.readYet(),
     "Remove"];
 
-  for (i = 0; i < 5; i ++){
-    bookDivs[i].classList.add(classes[i]);
-    bookDivs[i].innerHTML = divText[i];
-    bookCard.appendChild(bookDivs[i]);
+  i = 0
+  for (let bookDiv of bookDivs){
+    bookDiv.classList.add(classes[i]);
+    bookDiv.innerHTML = divText[i];
+    bookCard.appendChild(bookDiv);
+    i = i + 1;
   }
-
   document.querySelector(".library-container").appendChild(bookCard);
 }
 
-myLibrary.forEach(book => displayBookNew(book));
+//myLibrary.forEach(book => displayBookNew(book));
+
+function displayLibrary(){
+  for (let book of myLibrary){
+    displayBook(book);
+  }
+}
+
+function getFormInputs(){
+  return [document.querySelector('input[name="title"]').value,
+          document.querySelector('input[name="author"]').value,
+          document.querySelector('input[name="pages"]').value,
+          document.querySelector('input[name="read"]:checked').value
+        ]
+}
+
+function clearFormInputs(){
+  document.querySelector('input[name="title"]').value = "";
+  document.querySelector('input[name="author"]').value = "";
+  document.querySelector('input[name="pages"]').value = "";
+  document.querySelector('input[name="read"]:checked').checked = false;
+}
+
+const addButton = document.querySelector(".add-book");
+
+addButton.addEventListener('click', () => {
+  [title, author, pages, read] = getFormInputs();
+  let newBook = new Book(title, author, pages, read);
+  addBookToLibrary(newBook);
+  clearFormInputs();
+});
+
+const clearButton = document.querySelector(".clear-form");
+
+clearButton.addEventListener('click', () => {
+  clearFormInputs();
+});
