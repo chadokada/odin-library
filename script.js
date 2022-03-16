@@ -19,7 +19,9 @@ function addBookToLibrary(book){
   myLibrary.push(book)
 }
 
+//
 /* Manually added books to test code*/
+//
 
 let book1 = new Book("The Hobbit", "J.R.R. Tolkien", "295", "no");
 let book2 = new Book("The Grapes of Wrath", "John Steinbeck", "464", "yes");
@@ -31,6 +33,10 @@ addBookToLibrary(book1);
 addBookToLibrary(book2);
 addBookToLibrary(book3);
 addBookToLibrary(book4);
+
+//
+/* Delete lines 22 to 35 when done **/
+//
 
 function displayBook(book){
   let bookCard = document.createElement("div");
