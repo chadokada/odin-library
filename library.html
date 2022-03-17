@@ -9,25 +9,11 @@
 <body>
 
   <div class="container">
-    <div class="heading">My Personal Library</div>
-    <div class="library-container">
-    
-    <!--
-      <div class="book-card">
-        <div class="title">The Hobbit or some other bullshit</div>
-        <div class="author">J.R.R. Tolkien</div>
-        <div class="pages">295 pages</div>
-        <button class="not-read">Not Read</button>
-        <button class="remove">Remove</button>
-      </div>
-    -->
-    </div>
-
-    <div class="temp-container">
-
-
-
+    <div class="heading">
+      <div class="page-heading">My Personal Library</div>
+      <div class="overlay"></div>
       <div class="new-book-form">
+        <button class="close-form">X</button>
         <div class="form-heading">Add a Book</div>
         <div class="form-input">
           <label for="bookTitle">Title</label>
@@ -41,25 +27,19 @@
           <label for="bookPages">Pages</label>
           <input type="number" id="bookPages" name="pages" required>
         </div>
-
-        <fieldset class="read-radio">
-          <legend>Did you read this book?</legend>
-          <label for="bookRead">Yes</label>
-          <input type="radio" id="bookRead" name="read" value="yes">
-          <label for="bookNotRead">No</label>
-          <input type="radio" id="bookNotRead" name="read" value="no">
+        <fieldset class="read-checkbox">
+          <label for="bookRead">I've read this book</label>
+          <input type="checkbox" id="bookRead" name="read" value="yes">
         </fieldset>
-
         <button class="add-book">Add</button>
         <button class="clear-form">Clear</button>
-
       </div>
-
-
-
-
     </div>
-
+      
+    <div class="main-content">
+      <button class="show-book-form">Add Book</button>
+      <div class="library-container"></div>
+    </div>
   </div>
 
 </body>

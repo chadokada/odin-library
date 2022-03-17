@@ -8,14 +8,13 @@ body{
 
 .container{
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: 78px 1fr;
   height: 100vh;
 }
 
 /* Style for heading*/
 
 .heading{
-  font-size: 2rem;
   padding-top: 20px;
   padding-bottom: 20px;
   text-align: center;
@@ -24,14 +23,57 @@ body{
   z-index: 1;
   background-color: #f8fafc;
   box-shadow: 0px 5px 4px -4px #94a3b8;
+
+}
+.page-heading{
+  font-size: 2rem;
+}
+
+.overlay{ 
+  display: none; /* Add Book button will toggle block */
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vw;
+  z-index: 10;
+}
+
+.new-book-form{
+  background-color: white;
+  box-sizing: border-box;
+  height: 250px;
+  width: 300px;
+  display: none; /* Add Book button will toggle grid */
+  gap: 5px;
+  grid-template-rows: auto auto auto auto auto auto 1fr;
+  grid-template-columns: auto auto;
+  justify-items: center;
+  padding: 10px;
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 25vh;
+  margin: auto;
+  z-index: 50;
 }
 
 /* Styles for library */
+.main-content{
+  background-color: #cbd5e1;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  padding: 10px;
+  gap: 10px;
+}
+
+.show-book-form{
+  width: 100px;
+}
 
 .library-container{
   background-color: #cbd5e1;
   width: 100%;
-  padding: 10px;
+  /*padding: 10px;*/
   display: grid;
   grid-template-columns: repeat(auto-fit, 300px);
   grid-auto-rows: 200px;
@@ -52,7 +94,9 @@ body{
   grid-template-columns: auto auto;
   justify-items: center;
 }
-
+.index{
+  display: none;
+}
 .title,
 .author,
 .pages{
@@ -80,27 +124,26 @@ body{
   height: 500px;
 }
 
-.new-book-form{
-  background-color: white;
-  box-sizing: border-box;
-  height: 250px;
-  width: 300px;
-  display: grid;
-  gap: 5px;
-  grid-template-rows: auto auto auto auto auto 1fr;
-  grid-template-columns: auto auto;
-  justify-items: center;
-  padding: 10px;
-}
+
 
 .form-heading,
 .form-input,
 .read-radio,
+.read-checkbox,
 .button-row{
   grid-column: 1 / 3;
   box-sizing: border-box;
 }
 
+.close-form{
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  color: red;
+  grid-column: 2/3;
+  justify-self: end;
+  font-weight: bold;
+}
 .form-heading{
   font-weight: bold;
   font-size: 1.5em;
@@ -117,6 +160,9 @@ body{
   width: 200px;
 }
 
+.read-checkbox{
+  width: 100%;
+}
 .form-input label,
 .clear-form{
   justify-self: start;
@@ -126,7 +172,8 @@ body{
   justify-self: end;
 }
 
-.new-book-form button{
+.add-book,
+.clear-form{
   height: 30px;
   width: 70px;
 }
