@@ -82,7 +82,7 @@ body{
 
 /* Styles for book card */
 
-.book-card{
+.card-container{
   background-color: #f8fafc;
   border-radius: 10px;
   box-sizing: border-box;
