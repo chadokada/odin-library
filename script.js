@@ -1,4 +1,4 @@
-class Book1{
+class Book{
   #title;
   #author;
   #pages;
@@ -18,7 +18,7 @@ class Book1{
   }
 
   get author(){
-    return this.#author;
+    return this.#author;Book
   }
 
   get pages(){
@@ -30,7 +30,7 @@ class Book1{
   }
 }
 
-class Library1{
+class Library{
   #myLibrary;
   constructor(){
     this.#myLibrary = [];
@@ -87,7 +87,7 @@ class bookForm{
   addBook(library){
     let title, author, pages, read;
     [title, author, pages, read] = this.#getFormInputs();
-    let newBook = new Book1(title, author, pages, read)
+    let newBook = new Book(title, author, pages, read)
     library.addBookToLibrary(newBook);
     this.#displayBook(newBook, library)
     this.clearFormInputs();
@@ -181,7 +181,7 @@ class bookCard{
 }
 
 const main = (() => {
-  let userLibrary = new Library1();
+  let userLibrary = new Library();
   let userBookForm = new bookForm();
   const addBookBtn = document.querySelector(".show-book-form");
   const closeFormBtn =  document.querySelector(".close-form");
